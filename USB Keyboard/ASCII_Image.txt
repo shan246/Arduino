@@ -1,0 +1,81 @@
+#“Hack” word in rhombus eye design
+void setup() {
+Serial.begin(9600); delay(1000);
+
+Keyboard.set_modifier(MODIFIERKEY_LEFT_GUI);
+
+Keyboard.set_key1(KEY_R);
+
+Keyboard.send_now();
+delay(5000);
+
+Keyboard.print("notepad");
+delay(90);
+
+Keyboard.press(KEY_RETURN);
+delay(90);
+
+Keyboard.release(KEY_RETURN);
+
+}
+
+void loop()
+{
+
+int i,j;
+
+for (i = 1; i<=30; i++)
+{
+    for (j = i; j<=30; j++)
+    {
+        Keyboard.print("XOXO");
+    }
+    
+    for (j = 1; j<=i; j++)
+    {
+        Keyboard.print("HACK ");
+    }
+    
+    for (j = 1; j<=i ; j++)
+    {
+    Keyboard.print(" HACK");
+    }
+    
+    for (j = i; j<=30; j++)
+    {
+    Keyboard.print("XOXO");
+    }
+
+Keyboard.println();
+
+}
+
+for (i = 1; i<=30; i++)
+{
+
+    for (j =1; j<=i; j++)
+    {
+        Keyboard.print("XOXO");
+    }
+
+    for (j = i; j<=30; j++)
+    {
+        Keyboard.print(" HACK");
+    }
+    
+    for (j = i; j<=30; j++)
+    {
+        Keyboard.print(" HACK");
+    }
+    
+    for (j =1; j<=i; j++)
+    {
+        Keyboard.print("XOXO");
+    }
+    Keyboard.println();
+}
+
+Keyboard.println();
+exit(0);
+
+}
